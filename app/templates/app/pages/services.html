@@ -6,56 +6,56 @@
     </div>
     <form action="{% url 'app:services' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="row card-detail-row" id="img_1">
+        <div class="row card-detail-row" id="img">
             <div class="col-12 mt-3 mb-1">
                 <h2>PLANT IDENTIFICATION</h2>
-            </div> 
+            </div>
             <div class="col-md-12 col-lg-6 upload-box">
                 <div class="image">
-                    {% if service == 'img_1' %}
+                    {% if service == 'img' %}
                         <img src="{{url}}" alt="" class="active">
                     {% endif %}
-                    
+
                     <div>
                         <i class="m-2 upload-icon fas fa-cloud-upload-alt"></i>
                         <br>Please select a file <br> to begin the process!
                     </div>
-                    <input name="img_1" type="file">
-                </div> 
-            </div>  
+                    <input name="img" type="file">
+                </div>
+            </div>
 
             <div class="col-md-12 col-lg-6">
                 <div class="image">
-                    <div>Once you upload your image, <br>the result will appear here. </div>
-                </div>   
-            </div>    
+                    <div>Once you upload your image, <br>the result will appear here. <strong>{{result}}</strong> </div>
+                </div>
+            </div>
         </div>
 
         <div class="row my-5 card-detail-row" id="img_2">
             <div class="col-12 mt-3 mb-1">
                 <h2>TEXT EXTRACTION</h2>
-            </div> 
+            </div>
 
             <div class="col-md-12 col-lg-6 upload-box">
                 <div class="image">
                     {% if service == 'img_2' %}
                         <img src="{{url}}" alt="" class="active">
                     {% endif %}
-                    
+
                     <div>
                         <i class="m-2 upload-icon fas fa-cloud-upload-alt"></i>
                         <br>Please select a file <br> to begin the process!
                     </div>
                     <input name="img_2" type="file">
-                </div> 
-                
-            </div>  
+                </div>
+
+            </div>
 
             <div class="col-md-12 col-lg-6">
                 <div class="image">
-                    <div>Once you upload your image, <br>the result will appear here <strong>{{result}}</strong>. </div>
-                </div>   
-            </div>    
+                    <div>Once you upload your image, <br>the result will appear here. </div>
+                </div>
+            </div>
         </div>
         <button data-id="{{service}}" type="submit" style="display: none;">SUBMIT {{service}}</button>
     </form>
