@@ -38,3 +38,9 @@ def services(request):
         context['result'] = result
 
     return render(request, 'app/pages/services.html', context)
+
+def about(request):
+    return render(request, 'app/pages/about.html')
+
+def contact(request):
+    return render(request, 'app/pages/contact.html')
